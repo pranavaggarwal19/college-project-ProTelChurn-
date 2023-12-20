@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recommendation Result</title>
+    <style>
+      /* Basic reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Recommendation result container styles */
+      .recommendation-result-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Result info styles */
+      .result-info p {
+        margin-bottom: 10px;
+      }
+
+      .result-info strong {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your page content goes here -->
+
+    <div class="recommendation-result-container">
+      <h2>Recommendation Result</h2>
+      <div class="result-info">
+        <!-- JavaScript will populate the recommendation result here -->
+      </div>
+    </div>
+
+    <script>
+      // Function to display recommendation result
+      function displayRecommendationResult() {
+        // Get the result container
+        const resultContainer = document.querySelector(
+          ".recommendation-result-container .result-info"
+        );
+        if (resultContainer) {
+          // Replace the hardcoded text with the actual recommended offer
+          resultContainer.innerHTML = `
+          <p><strong>Recommended Offer:</strong> Discount on Premium Plan</p>
+        `;
+        }
+      }
+
+      // Call function to display recommendation result when the DOM is loaded
+      document.addEventListener(
+        "DOMContentLoaded",
+        displayRecommendationResult
+      );
+    </script>
+  </body>
+</html>

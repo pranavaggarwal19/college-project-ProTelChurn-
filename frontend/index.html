@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Telecom Churn Prediction System</title>
+    <style>
+      /* main.css */
+
+      /* Basic styles for the main HTML file */
+      /* Customize as needed */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header component -->
+    <header>
+      <!-- Include header content -->
+      <h1>Telecom Churn Prediction System</h1>
+      <!-- Links to header component file -->
+      <link rel="import" href="components/header.html" />
+    </header>
+
+    <!-- Main content area -->
+    <main class="main-content">
+      <!-- Content will be dynamically changed based on user navigation -->
+      <!-- Links to different pages -->
+      <link rel="import" href="pages/home.html" id="home-page" />
+      <link rel="import" href="pages/dashboard.html" id="dashboard-page" />
+      <link
+        rel="import"
+        href="pages/prediction_popup.html"
+        id="prediction-page"
+      />
+      <link
+        rel="import"
+        href="pages/recommendation_popup.html"
+        id="recommendation-page"
+      />
+    </main>
+
+    <!-- Footer component -->
+    <footer>
+      <!-- Include footer content -->
+      <p>&copy; 2023 Telecom Churn Prediction System</p>
+      <!-- Link to footer component file -->
+      <link rel="import" href="components/footer.html" />
+    </footer>
+
+    <!-- Your scripts go here -->
+    <script>
+      // main.js - JavaScript functionality for the main frontend file
+
+      // Function to handle navigation and page content changes
+      function navigateTo(page) {
+        const mainContent = document.querySelector(".main-content");
+
+        // Fetch and display the content for the selected page
+        fetchPageContent(page)
+          .then((content) => {
+            mainContent.innerHTML = content;
+          })
+          .catch((error) => {
+            console.error("Error fetching page content:", error);
+            // Display an error message or handle the error appropriately
+          });
+      }
+
+      // Function to fetch page content based on the selected page (Replace with your logic)
+      function fetchPageContent(page) {
+        // Example: Fetch content based on page name or URL
+        return new Promise((resolve, reject) => {
+          // Replace this with your logic to fetch different page content dynamically
+          const selectedPage = document.getElementById(page + "-page");
+          if (selectedPage) {
+            fetch(selectedPage.href)
+              .then((response) => response.text())
+              .then((data) => {
+                resolve(data);
+              })
+              .catch((err) => {
+                reject("Error fetching page content:", err);
+              });
+          } else {
+            reject("Page content not found");
+          }
+        });
+      }
+
+      // Initial navigation to the home page on load
+      window.addEventListener("load", function () {
+        navigateTo("home");
+      });
+    </script>
+  </body>
+</html>

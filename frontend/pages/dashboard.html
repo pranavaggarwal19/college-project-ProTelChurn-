@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard Page</title>
+    <style>
+      /* dashboard.css */
+
+      /* Basic reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your page content goes here -->
+
+    <header>
+      <h1>Dashboard</h1>
+    </header>
+
+    <main>
+      <!-- Your dashboard content will be populated by JavaScript -->
+    </main>
+
+    <script>
+      // dashboard.js - JavaScript functionality for the dashboard page
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Simulated function to fetch dashboard data from the backend (replace with your actual data fetching logic)
+        function fetchDashboardData() {
+          // Simulated data (replace with actual fetched data)
+          const dashboardData = {
+            totalCustomers: 1000,
+            churnRate: 15,
+            monthlyRevenue: 75000,
+            // Add more dashboard-related data as needed
+          };
+
+          return dashboardData;
+        }
+
+        // Function to display fetched dashboard data
+        function displayDashboardData() {
+          // Call the function to fetch data
+          const data = fetchDashboardData();
+
+          // Display data in the dashboard
+          const dashboardElement = document.querySelector("main");
+
+          // Example: Displaying data in paragraphs (replace with your actual dashboard design)
+          dashboardElement.innerHTML = `
+          <p>Total Customers: ${data.totalCustomers}</p>
+          <p>Churn Rate: ${data.churnRate}%</p>
+          <p>Monthly Revenue: $${data.monthlyRevenue}</p>
+          <!-- Add more elements to display additional data -->
+        `;
+        }
+
+        // Call function to display dashboard data when the DOM is loaded
+        displayDashboardData();
+      });
+    </script>
+  </body>
+</html>

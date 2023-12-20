@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prediction Result</title>
+    <style>
+      /* Basic reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Prediction result container styles */
+      .prediction-result-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Result info styles */
+      .result-info p {
+        margin-bottom: 10px;
+      }
+
+      .result-info strong {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your page content goes here -->
+
+    <div class="prediction-result-container">
+      <h2>Prediction Result</h2>
+      <div class="result-info">
+        <!-- JavaScript will populate the prediction result here -->
+      </div>
+    </div>
+
+    <script>
+      // Function to display prediction result
+      function displayPredictionResult() {
+        // Get the result container
+        const resultContainer = document.querySelector(
+          ".prediction-result-container .result-info"
+        );
+        if (resultContainer) {
+          // Replace the hardcoded text with actual prediction result and offer
+          resultContainer.innerHTML = `
+          <p><strong>Churn Prediction:</strong> High</p>
+          <p><strong>Recommended Offer:</strong> Discount on Premium Plan</p>
+        `;
+        }
+      }
+
+      // Call function to display prediction result when the DOM is loaded
+      document.addEventListener("DOMContentLoaded", displayPredictionResult);
+    </script>
+  </body>
+</html>

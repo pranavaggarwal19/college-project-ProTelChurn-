@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Churn Prediction Form</title>
+    <style>
+      /* Basic reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Form container styles */
+      .form-container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Form group styles */
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input[type="number"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your page content goes here -->
+
+    <div class="form-container">
+      <h2>Churn Prediction Form</h2>
+      <form id="churnPredictionForm">
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usage">Usage Pattern:</label>
+          <textarea id="usage" name="usage" rows="4" required></textarea>
+        </div>
+        <!-- Add more input fields as needed -->
+        <button type="submit">Predict Churn</button>
+      </form>
+    </div>
+
+    <script>
+      // Function to handle form submission
+      function handleFormSubmission(event) {
+        event.preventDefault();
+
+        // Get form data
+        const form = document.getElementById("churnPredictionForm");
+        const formData = new FormData(form);
+
+        // Convert form data to JSON object
+        const jsonData = {};
+        formData.forEach((value, key) => {
+          jsonData[key] = value;
+        });
+
+        // Example: Log the collected data (Replace this with your backend API call)
+        console.log("Submitted Data:", jsonData);
+        // Here, you would send this data to your backend using fetch or other methods
+        // Replace the console.log statement with your actual API call
+
+        // Simulate response from backend (for demonstration purposes)
+        const fakeApiResponse = {
+          churnPrediction: "High",
+          recommendedOffer: "Discount on Premium Plan",
+        };
+
+        // For demonstration, display a simple alert with the response (replace this with actual handling)
+        alert(
+          `Churn Prediction: ${fakeApiResponse.churnPrediction}\nRecommended Offer: ${fakeApiResponse.recommendedOffer}`
+        );
+      }
+
+      // Event listener for form submission
+      const form = document.getElementById("churnPredictionForm");
+      if (form) {
+        form.addEventListener("submit", handleFormSubmission);
+      }
+    </script>
+  </body>
+</html>

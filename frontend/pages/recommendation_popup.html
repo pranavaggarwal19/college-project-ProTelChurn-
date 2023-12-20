@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recommendation Pop-up</title>
+    <style>
+      /* recommendation_popup.css */
+
+      /* Basic styles for the recommendation pop-up */
+      /* Customize as needed */
+      .recommendation-popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .popup-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 70%;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your pop-up content goes here -->
+
+    <div class="recommendation-popup">
+      <div class="popup-content">
+        <span class="close" onclick="closeRecommendationPopup()">&times;</span>
+        <h2>Recommendation Form</h2>
+        <form id="recommendationForm">
+          <!-- Add form fields for recommendation input -->
+          <!-- Example: Input fields for customer details -->
+          <label for="customerID">Customer ID:</label>
+          <input
+            type="text"
+            id="customerID"
+            name="customerID"
+            required
+          /><br /><br />
+
+          <!-- Add more input fields as needed -->
+
+          <input type="submit" value="Get Recommendation" />
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // recommendation_popup.js - JavaScript functionality for the recommendation pop-up
+
+      // Function to open the recommendation pop-up
+      function openRecommendationPopup() {
+        const recommendationPopup = document.querySelector(
+          ".recommendation-popup"
+        );
+        recommendationPopup.style.display = "block";
+      }
+
+      // Function to close the recommendation pop-up
+      function closeRecommendationPopup() {
+        const recommendationPopup = document.querySelector(
+          ".recommendation-popup"
+        );
+        recommendationPopup.style.display = "none";
+      }
+
+      // Submit event listener for the recommendation form
+      document
+        .getElementById("recommendationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Replace this with your logic to handle form submission and get recommendation results
+          // For example: fetchRecommendationResults();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prediction Result</title>
+    <style>
+      /* prediction_result.css */
+
+      /* Basic styles for the prediction result page */
+      /* Customize as needed */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .main {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .prediction-info {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .prediction-info h2 {
+        margin-bottom: 10px;
+      }
+
+      .prediction-info p {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your page content goes here -->
+
+    <header>
+      <h1>Prediction Result</h1>
+    </header>
+
+    <main class="main">
+      <div class="prediction-info">
+        <!-- JavaScript will populate the prediction result here -->
+      </div>
+    </main>
+
+    <script>
+      // prediction_result.js - JavaScript functionality for the prediction result page
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to display prediction result based on received data (Replace with actual data)
+        function displayPredictionResult() {
+          const predictionInfo = document.querySelector(".prediction-info");
+
+          // Example data (replace with actual prediction result data)
+          const customerID = 12345;
+          const churnStatus = "Churned";
+
+          // Update the prediction info displayed on the page
+          predictionInfo.innerHTML = `
+          <h2>Churn Prediction</h2>
+          <p><strong>Customer ID:</strong> ${customerID}</p>
+          <p><strong>Churn Status:</strong> ${churnStatus}</p>
+          <!-- Add more prediction result details here -->
+        `;
+        }
+
+        // Call function to display prediction result when the DOM is loaded
+        displayPredictionResult();
+      });
+    </script>
+  </body>
+</html>

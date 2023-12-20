@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home Page</title>
+    <style>
+      /* Basic reset for margin and padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      button {
+        display: block;
+        margin: 10px 0;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #3498db;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Your page content goes here -->
+
+    <header>
+      <h1>Welcome to Churn Prediction System</h1>
+    </header>
+
+    <main>
+      <p>This is the home page of the Churn Prediction System.</p>
+      <p>
+        Explore the system by navigating through the dashboard, prediction, and
+        recommendation pages.
+      </p>
+      <button id="openPredictionPopup">Open Prediction</button>
+      <button id="openRecommendationPopup">Open Recommendation</button>
+    </main>
+
+    <script>
+      // Function to open the prediction popup
+      document
+        .getElementById("openPredictionPopup")
+        .addEventListener("click", function () {
+          // Replace this with your code to open the prediction popup
+          alert(
+            "Open Prediction Popup - Replace this alert with your popup logic"
+          );
+        });
+
+      // Function to open the recommendation popup
+      document
+        .getElementById("openRecommendationPopup")
+        .addEventListener("click", function () {
+          // Replace this with your code to open the recommendation popup
+          alert(
+            "Open Recommendation Popup - Replace this alert with your popup logic"
+          );
+        });
+    </script>
+  </body>
+</html>
